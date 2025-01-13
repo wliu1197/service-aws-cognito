@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+ service-aws-cognito:
+  image: service-aws-cognito:v1
+  build: .
+  restart: always
+  container_name: service-aws-cognito
+  ports:
+   - 80:80
+  volumes:
+   - .m2:/root/.m2
+   - type: bind
+     source: /Users/wenhaoliu/Desktop/interview_preparing/SpringbootUdemy/service-aws-cognito/target/service-aws-cognito-0.0.1-SNAPSHOT.jar
+     target: /home/app/springboot.jar
